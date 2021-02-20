@@ -1,6 +1,7 @@
 import discord
 import random
 import os
+from keep_alive import keep_alive
 
 client = discord.Client()
 
@@ -65,5 +66,5 @@ async def on_message(message):
   if any(word in msg for word in amongus_words):
     await message.channel.send(random.choice(amongus_images))
 
-
+keep_alive()
 client.run(os.getenv('TOKEN'))
