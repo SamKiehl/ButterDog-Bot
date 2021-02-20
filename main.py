@@ -27,4 +27,14 @@ async def on_message(message):
   if any(word in msg for word in when_words):
     await message.channel.send('We Are the World, we are the children, we are the ones who make a brighter day so let\'s start giving!')
 
+  amongus_words = ['Sus', 'sus', 'Imposter', 'imposter', 'Vent', 'vent', 
+  'Vented', 'vented', 'Electrical', 'electrical', 'Admin', 'admin',
+  'Airpod Shotty', 'Airpod shotty', 'airpod Shotty' 'airpod shotty', 'Sussy', 
+  'sussy', 'Among Us', 'Among us', 'among Us', 'among us', 'Amoongus', 
+  'amoongus', 'Among', 'among']
+
+  if any(word in msg for word in amongus_words):
+    await message.channel.send('https://i.pinimg.com/originals/82/92/9e/82929e981b875b03641ad272953d252e.png')
+
+
 client.run(os.getenv('TOKEN'))
