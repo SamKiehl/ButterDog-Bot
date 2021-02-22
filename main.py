@@ -27,7 +27,8 @@ async def on_message(message):
     'Guten Tag',
     'Hallo',
     'Hej',
-    'Shalom'
+    'Shalom',
+    'Hi'
   ]
 
   if message.content.startswith('!!hello'):
