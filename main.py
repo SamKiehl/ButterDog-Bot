@@ -16,8 +16,22 @@ async def on_message(message):
 
   msg = message.content
 
-  if message.content.startswith('$hello'):
-    await message.channel.send('Buenos dias!')
+  hello_responses = [
+    'Bonjour',
+    'Buenos Dias',
+    'Hola',
+    'Privet',
+    'Nǐ hǎo',
+    'Ciao',
+    'Konnichiwa',
+    'Guten Tag',
+    'Hallo',
+    'Hej',
+    'Shalom'
+  ]
+
+  if message.content.startswith('!!hello'):
+    await message.channel.send(random.choice(hello_responses))
 
   pop_words = ['Popeye\'s', 'popeye\'s', 'Popeyes', 'popeyes', 'Chicken', 'chicken', 'Sandwich', 'sandwich']
 
@@ -36,11 +50,39 @@ async def on_message(message):
     'budda dog'
   ]
 
+  true_words = [
+    'TRUE',
+    'TRUE!',
+    'True',
+    'True!',
+    'true',
+    'true!',
+    '!!TRUE!!'
+  ]
+
+  true_responses = [
+    'TRUE',
+    'TRUE!',
+    'True',
+    'True!',
+    'true',
+    'true!',
+    'I wholeheartedly agree!',
+    'Factual',
+    '!False!',
+    'BASED!',
+    'Based!',
+    'REDPILLED!'
+  ]
+
   if any(word in msg for word in butterdog_words):
     await message.channel.send('Dog wit da butta.')
 
   if any(word in msg for word in pop_words):
     await message.channel.send('Watch it, mortal. (Rule #8)')
+
+  if any(word in msg for word in true_words):
+      await message.channel.send(random.choice(true_responses))
 
   when_words = ['When', 'when']
 
@@ -53,14 +95,9 @@ async def on_message(message):
   'amoongus', 'Among', 'among', 'Amogus', 'amogus']
 
   amongus_images = [
-    'https://i.pinimg.com/originals/82/92/9e/82929e981b875b03641ad272953d252e.png',
-    'https://cdn.vox-cdn.com/thumbor/v_UxzvgVYV-_hB0B3n7aendMadY=/1400x1400/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/21899632/yu7VuiU.png',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqj3rL5xzvfet31gJcfYBO0jUTxJGuUgdOg&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRssTpPo2wh-s1J5_gUYNiWGRF3vZHkjt2rng&usqp=CAU',
-    'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f731f9d4-b940-4360-925f-efa56ad882a8/de7sg7i-9141d7c7-d999-48ce-9068-dde4c0e06cd0.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZjczMWY5ZDQtYjk0MC00MzYwLTkyNWYtZWZhNTZhZDg4MmE4XC9kZTdzZzdpLTkxNDFkN2M3LWQ5OTktNDhjZS05MDY4LWRkZTRjMGUwNmNkMC5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.0vJFmC1vuZzBvVLOH_qRkkg2c06CIghXBc_UkoWE-Ao',
-    'https://i.pinimg.com/474x/21/04/a2/2104a29b074c41d7a58445aaf01fdb4b.jpg',
-    'https://i.ytimg.com/vi/6nkxWQKH4L8/maxresdefault.jpg',
-    'https://i.ytimg.com/vi/ZHkZTqyZICw/hqdefault.jpg'
+    'SUS!'
+    'WHEN THE IMPOSTER IS SUS!'
+    'IMPOSTER!?'
   ]
 
   if any(word in msg for word in amongus_words):
