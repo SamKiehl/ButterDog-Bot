@@ -113,14 +113,15 @@ async def on_message(message):
   'sussy', 'Among Us', 'Among us', 'among Us', 'among us', 'Amoongus', 
   'amoongus', 'Among', 'among', 'Amogus', 'amogus']
 
-  amongus_images = [
-    'SUS!'
-    'WHEN THE IMPOSTER IS SUS!'
-    'IMPOSTER!?'
+  amongus_responses = [
+    'SUS!',
+    'WHEN THE IMPOSTER IS SUS!',
+    'IMPOSTER!?',
+    'ඞ'
   ]
 
   if any(word in msg for word in amongus_words):
-    await message.channel.send(random.choice(amongus_images))
+    await message.channel.send(random.choice(amongus_responses))
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
