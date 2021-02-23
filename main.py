@@ -76,14 +76,32 @@ async def on_message(message):
     'REDPILLED!'
   ]
 
+  cringe_words = [
+    'Schnieder',
+    'SCHNIEDER',
+    'schnieder',
+    'Schnieds',
+    'SCHNIEDS',
+    'schnieds',
+    'Schneider',
+    'SCHNEIDER',
+    'schneider',
+    'Schneids',
+    'SCHNEIDS',
+    'schneids'
+  ]
+
   if any(word in msg for word in butterdog_words):
-    await message.channel.send('Dog wit da butta.')
+      await message.channel.send('Dog wit da butta.')
 
   if any(word in msg for word in pop_words):
-    await message.channel.send('Watch it, mortal. (Rule #8)')
+      await message.channel.send('Watch it, mortal. (Rule #8)')
 
   if any(word in msg for word in true_words):
       await message.channel.send(random.choice(true_responses))
+
+  if any(word in msg for word in cringe_words):
+      await message.channel.send(':face_vomiting:')
 
   when_words = ['When', 'when']
 
