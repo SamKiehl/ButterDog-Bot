@@ -34,6 +34,13 @@ async def on_message(message):
   if message.content.startswith('!!hello'):
     await message.channel.send(random.choice(hello_responses))
 
+  coin_responses = [
+    ':regional_indicator_h: Heads',
+    ':regional_indicator_t: Tails'
+  ]
+  if message.content.startswith('!!coin'):
+    await message.channel.send(random.choice(coin_responses))
+
   pop_words = ['Popeye\'s', 'popeye\'s', 'Popeyes', 'popeyes', 'Chicken', 'chicken', 'Sandwich', 'sandwich']
 
   butterdog_words = [
