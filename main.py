@@ -41,6 +41,9 @@ async def on_message(message):
   if message.content.startswith('!!coin'):
     await message.channel.send(random.choice(coin_responses))
 
+  if message.content.startswith('!!d6'):
+    await message.channel.send(random.randint(1, 6))
+
   pop_words = ['Popeye\'s', 'popeye\'s', 'Popeyes', 'popeyes', 'Chicken', 'chicken', 'Sandwich', 'sandwich']
 
   butterdog_words = [
