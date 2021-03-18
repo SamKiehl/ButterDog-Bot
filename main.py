@@ -189,16 +189,16 @@ async def on_message(message):
   if message.content.startswith('!!hello'):
     await message.channel.send(random.choice(hello_responses))
 
-  if message.content.startswith('!!add'):
-    getrid = msg.split('!!add ', 1)[1]
+  if message.content.startswith('!!sum'):
+    getrid = msg.split('!!sum ', 1)[1]
     nums = getrid.split(', ')
     output = []
     for x in range(len(nums)):
       output.append(int(nums[x]))
    
 
-    await message.channel.send(sum(output))
-    
+    await message.channel.send('=> ' + str(sum(output)))
+
   if message.content.startswith('!!hortonhearsa'):
         channel = message.channel
         this = await channel.send(random.choice(true_responses))
