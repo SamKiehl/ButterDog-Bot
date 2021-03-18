@@ -1,8 +1,8 @@
 import discord
 import random
 import os
+import time
 from keep_alive import keep_alive
-
 client = discord.Client()
 
 hello_responses = [
@@ -20,6 +20,17 @@ hello_responses = [
   'Hi',
   '.... . .-.. .-.. ---'
   ]
+
+inrange_responses = [
+  'Yeah, you\'re in range.',
+  'You should probably move.',
+  ':regional_indicator_r: :regional_indicator_u: :regional_indicator_n: ',
+  ':thumbsdown: ',
+  'Nah you\'re not in range.',
+  ':thumbsup:',
+  'You\'re good.',
+  'No, he\'s too far.'
+]
 
 morse_letters = [
   '.-',   #0 A
@@ -180,6 +191,10 @@ async def on_message(message):
   if message.content.startswith('!!hello'):
     await message.channel.send(random.choice(hello_responses))
 
+  if message.content.startswith('!!inrange'):
+    await message.channel.send(random.choice(inrange_responses))
+    time.sleep(3)
+    await message.channel.send('I think.')
   
   if message.content.startswith('!!morse'):
     morse = msg.split('!!morse ', 1)[1]
