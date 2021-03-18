@@ -185,12 +185,21 @@ async def on_message(message):
     return
 
   msg = message.content
-
   
-
   if message.content.startswith('!!hello'):
     await message.channel.send(random.choice(hello_responses))
 
+  if message.content.startswith('!!hortonhearsa'):
+        channel = message.channel
+        this = await channel.send(random.choice(true_responses))
+
+        def check(m):
+            return m.channel == channel
+
+        msg = await client.wait_for('message', check=check)
+        await this.edit(content="Who?")
+        await channel.send('Asked?')
+  
   if message.content.startswith('!!inrange'):
     await message.channel.send(random.choice(inrange_responses))
     time.sleep(3)
