@@ -194,7 +194,7 @@ async def on_message(message):
     nums = getrid.split(', ')
     output = []
     for x in range(len(nums)):
-      output.append(int(nums[x]))
+      output.append(float(nums[x]))
    
 
     await message.channel.send('=> ' + str(sum(output)))
