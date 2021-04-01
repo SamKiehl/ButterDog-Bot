@@ -174,6 +174,14 @@ amongus_responses = [
   'IMPOSTER!?',
   'ඞ'
 ]
+im_words = [
+  'im ',
+  'i\'m ',
+  'Im ',
+  'i\'m ',
+  'IM ',
+  'I\'M '
+]
 
 @client.event
 async def on_ready():
@@ -313,6 +321,13 @@ async def on_message(message):
 
   if any(word in msg for word in butterdog_words):
       await message.channel.send('Dog wit da butta.')
+
+  if any(word in msg for word in im_words):
+    for word in im_words:
+      if msg.find(word) != -1:
+        x = word
+        im = msg.split(x, 1)[1]
+    await message.channel.send('Hi ' + im + ' , i\'m dad!')
 
   if any(word in msg for word in pop_words):
       await message.channel.send('Watch it, mortal. (Rule #8)')
