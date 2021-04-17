@@ -21,6 +21,16 @@ hello_responses = [
   '.... . .-.. .-.. ---'
   ]
 
+sam_words = [
+  'Sam',
+  'sam',
+  'SAM',
+
+  'Kiehl',
+  'kiehl',
+  'KIEHL'
+]
+
 inrange_responses = [
   'Yeah, you\'re in range.',
   'You should probably move.',
@@ -244,6 +254,18 @@ async def on_message(message):
         msg = await client.wait_for('message', check=check)
         await this.edit(content="Who?")
         await channel.send('Asked?')
+
+  if message.content.startswith('!!catch'):
+        channel = message.channel
+        this = await channel.send(random.choice(eight_ball_responses))
+
+        def check(m):
+            return m.channel == channel
+
+        msg = await client.wait_for('message', check=check)
+        await this.edit(content="https://cdn.discordapp.com/attachments/812028715953029123/832822116067704832/j7hyEM.png")
+        msg = message.content
+        await channel.send('https://cdn.discordapp.com/attachments/812028715953029123/832822250355949589/oqcptj21hq151.png')
   
   if message.content.startswith('!!inrange'):
     await message.channel.send(random.choice(inrange_responses))
