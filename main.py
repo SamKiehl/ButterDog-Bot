@@ -182,6 +182,30 @@ im_words = [
   'IM ',
   'I\'M '
 ]
+eight_ball_responses = [
+  'It is certain', 
+  'It is decidedly so', 
+  'Without a doubt', 
+  'Yes definitely', 
+  'You may rely on it', 
+  'As I see it, yes', 
+  'Most likely', 
+  'Outlook good', 
+  'Yes', 
+  'Signs point to yes',
+
+  'Don\'t count on it',
+  'My reply is no', 
+  'My sources say no', 
+  'Outlook not so good', 
+  'Very doubtful',
+
+  'Reply hazy try again', 
+  'Ask again later', 
+  'Better not tell you now', 
+  'Cannot predict now', 
+  'Concentrate and ask again'
+]
 
 @client.event
 async def on_ready():
@@ -206,6 +230,9 @@ async def on_message(message):
    
 
     await message.channel.send('=> ' + str(sum(output)))
+  
+  if message.content.startswith('!!8ball'):
+    await message.channel.send(random.choice(eight_ball_responses))
 
   if message.content.startswith('!!hortonhearsa'):
         channel = message.channel
